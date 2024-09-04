@@ -1,7 +1,10 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      <div style="display: flex; align-items: center;">
+        <h6 style="margin: 0; margin-right: 8px;">Hello</h6>
+        <b>Jeet</b>
+      </div>
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +12,31 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">Users</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-list>
+    <ion-item *ngFor="let user of users">
+      <ion-avatar slot="start" style="width: 70px; height: 70px;">
+        <img [src]="user.profilePhoto" alt="Profile Photo">
+      </ion-avatar>
+      <ion-label>
+        <h1 style="font-size: 1.5em;">{{ user.name }}</h1>
+        <p style="font-size: 1.2em;">{{ user.location }}</p>
+        <!-- <p style="font-size: 1.2em;">{{ user.price }}</p> -->
+      </ion-label>
+      <ion-button slot="end" (click)="viewDetails(user)">
+        View
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <!-- Feedback Button -->
+  <ion-button
+    class="feedback-button"
+    color="tertiary"
+    (click)="presentFeedbackAlert()">
+    Feedback
+  </ion-button>
 </ion-content>

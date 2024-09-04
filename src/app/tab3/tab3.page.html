@@ -1,17 +1,28 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
+    <ion-title>Wallet</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ user.fullName }}</ion-card-title>
+      <ion-card-subtitle>{{ user.bankName }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Amount:</strong> ₹{{ user.amount | number:'1.2-2' }}</p>
+       <!-- Animated Credit Card -->
+  <div class="credit-card-container">
+    <div class="credit-card">
+      <div class="card-number">**** **** **** 1234</div>
+      <div class="card-details">
+        <div class="card-holder">ICICI BANK LTD</div>
+        <div class="card-expiry">Exp Date <b>12/25</b></div>
+      </div>
+    </div>
+  </div>
+      <ion-button expand="full" (click)="openAddMoneyModal()">Add Money</ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()" fill="clear">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Add Money</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Amount</ion-label>
+    <ion-input type="number" [(ngModel)]="amount" name="amount" required></ion-input>
+  </ion-item>
+  <ion-button expand="full" (click)="submit()">Submit</ion-button>
+
+  <!-- Animated Credit Card -->
+  <div class="credit-card-container">
+    <div class="credit-card">
+      <div class="card-number">**** **** **** 1234</div>
+      <div class="card-details">
+        <div class="card-holder">ICICI BANK LTD</div>
+        <div class="card-expiry">Exp Date <b>12/25</b></div>
+      </div>
+    </div>
+  </div>
+</ion-content>

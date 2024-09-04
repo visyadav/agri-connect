@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+      <ion-toolbar>
+        <ion-title size="large">Product Details</ion-title>
+      </ion-toolbar>
+    </ion-buttons>
+    <ion-title>{{ user.productName }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-img [src]="user.profilePhoto" style="width: 100%; height: 50%;"></ion-img>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ user.productName }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Owner:</strong> {{ user.name }}</p>
+      <p><strong>Location:</strong> {{ user.location }}</p>
+      <p><strong>Price:</strong> {{ user.price }}/quintal</p>
+
+      <!-- Buttons for Bidding and Buying -->
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-button expand="block" color="tertiary" (click)="presentBidAlert()">Bid</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button expand="block" color="primary" (click)="presentPaymentAlert()">Buy</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import { AddMoneyPage } from '../add-money/add-money.page';
 
 const routes: Routes = [
   {
@@ -20,11 +21,19 @@ const routes: Routes = [
         loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
       },
       {
+        path: 'add-money',
+        component: AddMoneyPage
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'
       }
     ]
+  },
+  {
+    path: 'user-details',
+    loadChildren: () => import('../user-details/user-details.module').then(m => m.UserDetailsPageModule)
   },
   {
     path: '',
